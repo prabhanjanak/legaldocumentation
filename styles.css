@@ -1,0 +1,214 @@
+/* Reset some basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #fdfbfb, #ebedee);
+    color: #000;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Navigation Bar Styling */
+header {
+    width: 100%;
+    padding: 15px 0;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    transition: background 0.3s ease;
+}
+
+header:hover {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: #003366;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.logo h1:hover {
+    color: #005b99;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #003366;
+    font-weight: 500;
+    font-size: 1.1em;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #009999;
+    border-bottom: 2px solid #009999;
+}
+
+.auth-buttons a {
+    margin-left: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+}
+
+.sign-in {
+    background: linear-gradient(135deg, #00aaff, #00ff99);
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.sign-in:hover {
+    background: linear-gradient(135deg, #0099cc, #00cc88);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+
+.sign-up {
+    background: linear-gradient(135deg, #00aaff, #00ff99);
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
+}
+
+.sign-up:hover {
+    background: linear-gradient(135deg, #0099cc, #00cc88);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Hero Section Styling */
+.hero {
+    text-align: center;
+    padding: 220px 20px;
+    max-width: 900px;
+    margin-top: 80px;
+    background: linear-gradient(135deg, #00aaff55, #00ff9955);
+    border-radius: 15px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(8px);
+    animation: fadeIn 1.5s ease-in;
+}
+
+.hero h1 {
+    font-size: 3.2em;
+    font-weight: 800;
+    color: #003366;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+
+.hero p {
+    margin-top: 25px;
+    font-size: 1.25em;
+    color: #333;
+    opacity: 0.85;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 50px;
+    padding: 15px 50px;
+    background: linear-gradient(135deg, #00b4db, #0083b0);
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-decoration: none;
+    border-radius: 50px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+    transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.cta-button:hover {
+    background: linear-gradient(135deg, #006e96, #005f73);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    transform: translateY(-5px);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    .nav-links li {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2.4em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .cta-button {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center; /* Aligns items vertically centered */
+}
+
+.logo-image {
+    width: 50px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between logo and text */
+}

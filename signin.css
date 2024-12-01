@@ -1,0 +1,143 @@
+/* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #f0f4c3, #c8e6c9); /* Calming pastel colors */
+    font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    transition: background 0.3s ease; /* Smooth background transition */
+}
+
+/* Login container styling */
+.login-container {
+    background: white;
+    border-radius: 20px; /* More rounded corners for a modern look */
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.15); /* Softer shadow for depth */
+    padding: 50px 30px; /* Comfortable padding */
+    width: 90%;
+    max-width: 450px; /* Slightly wider for more content */
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Heading styling */
+h2 {
+    text-align: center;
+    margin-bottom: 20px; /* Reduced margin for better balance */
+    color: #2c3e50; /* Darker shade for better contrast */
+    font-weight: bold;
+    font-size: 30px; /* Increased font size for prominence */
+}
+
+/* Input group styling */
+.input-group {
+    position: relative;
+    margin-bottom: 30px; /* Increased space between input groups */
+}
+
+/* Input field styling */
+input {
+    width: 100%;
+    padding: 16px 14px; /* Increased padding for better touch targets */
+    border: 2px solid #cfd8dc; /* Light gray border for a subtle look */
+    border-radius: 10px; /* More rounded for modernity */
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+/* Focus state styling for inputs */
+input:focus {
+    border-color: #4caf50; /* Green color for focus */
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.5);
+}
+
+/* Label styling */
+label {
+    position: absolute;
+    left: 16px;
+    top: 14px;
+    color: #aaa;
+    transition: 0.3s;
+    pointer-events: none;
+}
+
+/* Label focus effect */
+input:focus + label,
+input:not(:placeholder-shown) + label {
+    top: -10px;
+    left: 14px;
+    font-size: 12px;
+    color: #4caf50; /* Green color for active labels */
+}
+
+/* Button styling */
+.btn {
+    width: 100%;
+    padding: 16px; /* Increased padding for buttons */
+    background: linear-gradient(135deg, #4caf50, #388e3c); /* Fresh green gradient */
+    border: none;
+    border-radius: 10px; /* Rounded edges */
+    color: white;
+    font-size: 18px; /* Larger font for better visibility */
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative; /* Positioned for ripple effect */
+    overflow: hidden; /* Clipping for the ripple effect */
+}
+
+.btn:hover {
+    background: linear-gradient(135deg, #388e3c, #2e7d32); /* Darker gradient on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15); /* Soft shadow on hover for depth */
+}
+
+/* Button ripple effect */
+.btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Error message styling */
+.error-message {
+    color: #f44336; /* Consistent error color */
+    text-align: center;
+    margin-top: 10px;
+    height: 20px; /* Fixed height for animation */
+    font-weight: 500;
+}
+
+/* Responsive styling */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 40px 20px; /* Reduced padding on smaller screens */
+    }
+
+    h2 {
+        font-size: 26px; /* Adjusted header font size for smaller screens */
+    }
+
+    input {
+        font-size: 15px; /* Slightly smaller font for inputs */
+    }
+
+    .btn {
+        font-size: 15px; /* Smaller button text */
+    }
+}

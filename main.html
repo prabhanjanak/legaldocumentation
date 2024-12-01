@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered Legal Research</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section with User Dropdown -->
+        <header>
+            <div class="logo">
+                <img src="1.png" alt="Right Brothers Logo" class="logo-image">
+                <p class="logo-subtitle">𝐑𝐢𝐠𝐡𝐭 𝐁𝐫𝐨𝐭𝐡𝐞𝐫𝐬</p>
+            </div>
+
+            <div class="user-dropdown">
+                <button class="user-name">User dashboard</button>
+                <div class="dropdown-content">
+                    <a href="index.html" class="logout-btn">Logout</a> <!-- Changed button to anchor -->
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Section -->
+        <main>
+            <div class="hero-section">
+                <h1>Revolutionizing Legal Research</h1>
+                <p>AI-Powered Search Engine for Legal Professionals: Accurate, Efficient, and Easy.</p>
+                <div class="search-bar">
+                    <input type="text" placeholder="Ask any legal questions ....">
+                    <a href="https://rbatvvce.streamlit.app/" target="_blank">
+                        <button class="search-btn">&#128269;</button>
+                    </a>
+                </div>
+                
+            </div>
+
+            <div class="actions">
+                <button class="action-card" onclick="window.location.href='https://summarizepdfwithrb.streamlit.app/'">
+                    <span class="emoji">💡</span> Summaries Data from PDFs
+                </button>
+                <button class="action-card" onclick="window.location.href='https://rbatvvce.streamlit.app/'">
+                    <span class="emoji">📄</span> Get you Plaintiff Notice
+                </button>
+                <button class="action-card" onclick="window.location.href='https://twprpr.streamlit.app/'">
+                    <span class="emoji">📊</span> Prerequisites document analysies
+                </button>
+                <button class="action-card" onclick="window.location.href='https://know-your-constitution-with-rb.streamlit.app/'">
+                    <span class="emoji">📜</span> Know your constitution
+                </button>
+                <button class="action-card" onclick="window.location.href='https://lawyers-notebook-rb.streamlit.app/'">
+                    <span class="emoji">🗂️</span> Digital Notebook
+                </button>
+            </div>
+            
+            <section class="recent-notebooks">
+                <h2>Notebooks Library</h2>
+                <div class="notebook-item">
+                    <div>
+                        <p><strong>Contractual Obligations and Enforcement</strong></p>
+                        <span>A detailed summary of research articles</span>
+                    </div>
+                    <time>3:45 PM · Oct 25</time>
+                </div>
+                <div class="notebook-item">
+                    <div>
+                        <p><strong>AI in Legal Practices</strong></p>
+                        <span>Key findings and case studies</span>
+                    </div>
+                    <time>11:00 AM · Oct 24</time>
+
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // JavaScript for Dropdown Functionality
+        document.querySelector('.user-name').addEventListener('click', () => {
+            const dropdown = document.querySelector('.dropdown-content');
+            dropdown.classList.toggle('show');
+        });
+
+        // Close the dropdown if clicked outside
+        window.addEventListener('click', (event) => {
+            if (!event.target.matches('.user-name')) {
+                const dropdown = document.querySelector('.dropdown-content');
+                if (dropdown.classList.contains('show')) {
+                    dropdown.classList.remove('show');
+                }
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>Sign Up</title>
+</head>
+<body>
+    <div class="container">
+        <form class="signup-form" id="signupForm" onsubmit="return handleSignup(event)">
+            <h1>Create Account</h1>
+            <div class="input-group">
+                <input type="email" id="email" required placeholder=" ">
+                <label for="email" class="floating-label">Email</label>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" required placeholder=" ">
+                <label for="password" class="floating-label">Password</label>
+                <div class="password-strength">Password must be at least 8 characters.</div>
+            </div>
+            <div class="input-group">
+                <input type="password" id="confirm-password" required placeholder=" ">
+                <label for="confirm-password" class="floating-label">Confirm Password</label>
+            </div>
+            <button type="submit" class="btn-signup">Sign Up</button>
+            <div class="social-login">
+                <button type="button" class="social-btn">Sign up with Google</button>
+                <button type="button" class="social-btn">Sign up with Facebook</button>
+            </div>
+            <div class="login-link">
+                Already have an account? <a href="signin.html">Login here</a>
+            </div>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    async function handleSignup(event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        try {
+            const response = await fetch('/signup', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            });
+            const result = await response.json();
+            if (result.success) {
+                alert('Signup successful!');
+                window.location.href = 'main.html'; // Redirect on success
+            } else {
+                alert(result.message);
+            }
+        } catch (error) {
+            console.error('Error during signup:', error);
+        }
+    }
+</script>
+
+    </script>
+</body>
+</html>

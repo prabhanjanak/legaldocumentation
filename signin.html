@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="signin.css">
+</head>
+<body>
+    <form id="loginForm" onsubmit="return handleLogin(event)">
+        <h1>Login</h1>
+        <input type="email" id="login-email" required placeholder="Email">
+        <input type="password" id="login-password" required placeholder="Password">
+        <button type="submit">Login</button>
+        <a href="signup.html">Don't have an account? Sign up</a>
+    </form>
+    <style>/* Reset some default styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* Center the form on the page */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f3f4f6;
+        }
+        
+        /* Style the form container */
+        form {
+            background: #ffffff;
+            padding: 2rem;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        
+        /* Header styling */
+        form h1 {
+            margin-bottom: 1.5rem;
+            font-size: 24px;
+            color: #333333;
+        }
+        
+        /* Input styling */
+        form input[type="email"],
+        form input[type="password"] {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1rem;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        /* Button styling */
+        form button {
+            width: 100%;
+            padding: 0.8rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        form button:hover {
+            background-color: #0056b3;
+        }
+        
+        /* Link styling */
+        form a {
+            display: block;
+            margin-top: 1rem;
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: none;
+        }
+        
+        form a:hover {
+            text-decoration: underline;
+        }
+        </style>
+
+    <script>
+        async function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('login-email').value;
+            const password = document.getElementById('login-password').value;
+
+            try {
+                const response = await fetch('/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+                const result = await response.json();
+                if (result.success) {
+                    alert('Login successful!');
+                    window.location.href = 'main.html'; // Redirect on success
+                } else {
+                    alert(result.message);
+                }
+            } catch (error) {
+                console.error('Error during login:', error);
+            }
+        }
+    </script>
+</body>
+</html>

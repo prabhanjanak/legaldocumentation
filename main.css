@@ -1,0 +1,290 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(120deg, #e0f7fa, #ffffff);
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container */
+.container {
+    max-width: 1000px;
+    width: 90%;
+    margin: auto;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    padding: 40px;
+}
+
+/* Header Section */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+/* RB Logo */
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+}
+
+.logo-title {
+    font-size: 48px; /* Increased size for emphasis */
+    margin: 0;
+    color: #00796b;
+    font-weight: bold;
+    letter-spacing: 2px; /* Added letter spacing for a modern look */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.logo-subtitle {
+    font-size: 18px;
+    color: #004d40;
+    font-weight: 500; /* Slightly lighter for contrast */
+    margin-top: 5px; /* Added space between title and subtitle */
+    letter-spacing: 1px; /* Increased spacing for readability */
+}
+
+/* User Dropdown */
+.user-dropdown {
+    position: relative;
+}
+
+.user-name {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #00796b;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.user-name:hover {
+    text-decoration: underline;
+    color: #004d40; /* Darker color on hover */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 30px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    min-width: 120px;
+}
+
+.dropdown-content button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    background: #e53935;
+    color: white;
+    cursor: pointer;
+    text-align: left;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.dropdown-content button:hover {
+    background: #b71c1c;
+    transform: translateY(-1px);
+}
+
+.show {
+    display: block;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+    color: #004d40;
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #00796b;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.search-bar input:focus {
+    border-color: #004d40; /* Darker border on focus */
+    outline: none; /* Remove default outline */
+}
+
+.search-btn {
+    background: #00796b;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s;
+}
+
+.search-btn:hover {
+    background: #004d40;
+    transform: translateY(-1px);
+}
+
+/* Actions Section */
+.actions {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+}
+
+.action-card {
+    flex: 1;
+    min-width: 150px; /* Ensures buttons don’t get too small */
+    padding: 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s;
+    font-size: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center emoji and text */
+}
+
+.action-card:hover {
+    background: #b2dfdb;
+    transform: translateY(-5px);
+}
+
+/* Recent Notebooks */
+.recent-notebooks h2 {
+    margin-bottom: 15px;
+    font-size: 28px;
+    color: #00796b;
+}
+
+.notebook-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f1f1f1;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: background 0.3s;
+}
+
+.notebook-item:hover {
+    background: #e0e0e0; /* Light gray on hover */
+}
+
+.notebook-item div p {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.notebook-item span {
+    color: #777;
+}
+
+.notebook-item time {
+    font-size: 14px;
+    color: #999;
+}
+
+/* Logout Button Styles */
+.dropdown-content button.logout-btn {
+    background: #e53935; /* Bright red color for visibility */
+    color: white; /* White text for contrast */
+    padding: 12px 20px; /* Slightly adjusted padding for a better size */
+    border: none; /* No border for a clean look */
+    border-radius: 10px; /* Rounded corners for a modern design */
+    font-size: 16px; /* Font size for readability */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.dropdown-content button.logout-btn:hover {
+    background: #b71c1c; /* Darker red on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+.dropdown-content button.logout-btn:active {
+    background: #a00000; /* Even darker when active */
+    transform: translateY(0); /* Remove lift effect when clicked */
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-image {
+    height: 50px; /* Adjust based on your design */
+    margin-right: 10px; /* Space between logo and subtitle */
+}
+
+.logo-subtitle {
+    font-size: 1.2em; /* Adjust font size as needed */
+}
+
+
+.logout-btn {
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+    border: none; /* No border */
+    padding: 10px 15px; /* Padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it behave like a button */
+    margin: 5px 2px; /* Margin */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
